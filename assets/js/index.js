@@ -18,6 +18,7 @@ function checkTime(i) {
 
 function timer() {
   var seconds = 0;
+  var minutes = seconds / 60;
   setInterval(function () {
     seconds++;
     if (seconds == 1) {
@@ -27,7 +28,9 @@ function timer() {
     }
 
     if (seconds >= 60) {
-      document.getElementById("timer").innerHTML = "You have been on the page for " + seconds + " seconds " + "<br />" + "that's 1 minute, what are you doing with your life?";
+      minutes = seconds / 60;
+      document.getElementById("timer").innerHTML =
+        "You have been on the page for " + seconds + " seconds " + "<br />" + "that's " + Math.floor(minutes) + " minutes, what are you doing with your life?";
     }
   }, 1000);
 }
